@@ -2,6 +2,23 @@
 .filters {
   margin-bottom: 20px;
 }
+.card-img-top{
+  object-position: center;
+  width: 500px;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+}
+
+.card-body{
+  border-width: 0;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+}
 
 #name-search {
   padding: 10px;
@@ -12,23 +29,36 @@
 }
 /* Projects list */
 .projects-list {
+  object-position: center;
   margin-top: 20px;
 }
 
 .project {
+  object-position: center;
   background-color: white;
   padding: 20px;
+  margin-top: 20px;
   margin-bottom: 20px;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  box-shadow: 0 0 5px #A04142;
 }
 
 .project h2 {
+  object-position: center;
   margin-top: 0;
 }
 
 .project p {
+  object-position: center;
   margin-bottom: 10px;
   line-height: 1.5;
 }
 
+.project-name {
+color: #A04142;
+  font-weight: bold;
+  text-decoration: none;
+  font-family: roboto, sans-serif;
+  font-size: 30px;
+  text-align: center
+}

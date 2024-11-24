@@ -2,24 +2,32 @@
 {% load static %}
 
 {% block title %}
-  Home Page
+    Home Page
 {% endblock %}
 {% block extrahead %}
-  <link rel="stylesheet" href="{% static 'css/home.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/home.css' %}"/>
 {% endblock %}
 
 {% block content %}
-  <div class="projects-list">
-    {% for project in projects %}
-      <div class="project" data-name="{{ project.title|lower }}" data-tags="{{ project.tags.all|join:', '|lower }}">
-        <h2><a href="{% url 'projects' project.id %}">{{project.title}}</a></h2>
-        <p>{{project.description}}</p>
-        <p>Tags: {{project.tags.all|join:', '}}</p>
-      </div>
-    {% endfor %}
-  </div>
+    <div class="projects-list container-md">
+        <div class="card mb-3" style="border: none">
+            {% for project in projects %}
+                <div class="project card-body" data-name="{{ project.title|lower }}"
+                     data-tags="{{ project.tags.all|join:', '|lower }}">
+                    {% for image in project.images.all %}
+                        <img src="{{ image.image.url }}" class="card-img-top img-fluid" alt="Project image"/>
+                    {% endfor %}
+                    <div class="center" style="text-align: center;">
+                        <h2><a class="project-name" href="{% url 'projects' project.id %}">{{ project.title }}</a></h2>
+                        <p style="color: #2c2d2c">{{ project.description }}</p>
+                        <p style="color: #2c2d2c">Tags: {{ project.tags.all|join:', ' }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
 {% endblock content %}
 
 {% block extra_js %}
-  <script src="{% static 'js/home.js' %}"></script>
+    <script src="{% static 'js/home.js' %}"></script>
 {% endblock %}

@@ -5,6 +5,7 @@
     Home Page
 {% endblock %}
 {% block extrahead %}
+    <link href= "https://coolors.co/font/aleo"/>
     <link rel="stylesheet" href="{% static 'css/home.css' %}"/>
 {% endblock %}
 
@@ -15,9 +16,9 @@
                 <div class="project card-body" data-name="{{ project.title|lower }}"
                      data-tags="{{ project.tags.all|join:', '|lower }}">
                     {% for image in project.images.all %}
-                        <img src="{{ image.image.url }}" class="card-img-top img-fluid" alt="Project image"/>
+                        <img class="image card-img-top img-fluid" src="{{ image.image.url }}" alt="Project image"/>
                     {% endfor %}
-                    <div class="center" style="text-align: center;">
+                    <div class="center text" style="text-align: center; font-family: aleo, sans-serif;">
                         <h2><a class="project-name" href="{% url 'projects' project.id %}">{{ project.title }}</a></h2>
                         <p style="color: #2c2d2c">{{ project.description }}</p>
                         <p style="color: #2c2d2c">Tags: {{ project.tags.all|join:', ' }}</p>

@@ -81,6 +81,9 @@ p {
     margin-left: 0; /* Resets the margin for smaller screens */
   }
 }
+.dropdown-toggle{
+  visibility: hidden;
+}
 
 .carousel-item {
   display: flex;

@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'base.html'%}
 {% load static %}
 
 {% block title %}
@@ -9,5 +9,53 @@
 {% endblock extrahead %}
 
 {% block content %}
-    <p>This is the contact page!</p>
+<section class="section" id="contact">
+    <form action="" name="contactForm" method="POST" onsubmit="return validateForm()">
+        {% csrf_token %}
+        <div class="contact-box">
+            <div class="left"></div>
+            <div class="right">
+                <h2>Contact me</h2>
+                <input type="text" class="field" placeholder="Your Name" name="name">
+                <input type="text" class="field" placeholder="Your Email" name="email">
+                <input type="text" class="field" placeholder="Phone" name="phone">
+                <textarea placeholder="Message" class="field" name="message"></textarea>
+                <button class="btn">Send</button>
+            </div>
+        </div>
+    </form>
+</section>
 {% endblock content %}
+
+<script>
+  function validateForm(){
+      let name = document.forms['contactForm']['name'].value;
+      let email = document.forms['contactForm']['email'].value;
+      let phone = document.forms['contactForm']['phone'].value;
+      let message = document.forms['contactForm']['message'].value;
+
+      if (name === '' || hasNumber(name)){
+          alert('Name must be filled out and must only contain letters');
+          return false;
+      } else if (email === '' && phone === ''){
+          alert('Email or phone must be filled out');
+          return false;
+      } else if (!(email.includes('@'))){
+          alert('Email does not seem to be valid');
+          return false;
+      }else if (isNaN(phone)){
+          alert('Phone number seems to contain letters');
+          return false;
+      } else if (message === ''){
+          alert('Message must be filled out');
+          return false;
+      } else {
+          // confirm or cancel
+          return confirm('Do you really want to sent the message?')
+      }
+  }
+
+  function hasNumber(myString) {
+      return /\d/.test(myString);
+  }
+</script>

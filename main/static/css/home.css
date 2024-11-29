@@ -42,25 +42,27 @@
   margin-top: 20px;
   margin-bottom: 20px;
   border-radius: 10px;
-  box-shadow: 0 0 5px #A04142;
+  box-shadow: 0 0 10px #e2e6e6;
 }
 
 .project h2 {
   object-position: center;
   margin-top: 0;
+  color: #ffffff;
 }
 
 .project p {
   object-position: center;
   margin-bottom: 10px;
   line-height: 1.5;
+  color: #ffffff;
 }
 
 .project-name {
-color: #e2e6e6;
+  color: #ffffff;
   font-weight: bold;
   text-decoration: none;
-  font-family: roboto, sans-serif;
+  font-family: Arial, sans-serif;
   font-size: 30px;
   text-align: center
 }
@@ -84,10 +86,12 @@ color: #e2e6e6;
   -ms-transform: translate(-50%, -50%)
 }
 .text{
-  border-radius: 15px;
-  background-color: #A04142;
+  border-radius: 10px;
+  background-color: #cf7677;
   font-size: 16px;
   padding: 16px 32px;
+  color: #ffffff;
+  font-family: Arial, sans-serif;
 }
 
 .project:hover .image {

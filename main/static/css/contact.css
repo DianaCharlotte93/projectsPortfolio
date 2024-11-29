@@ -6,7 +6,8 @@
 	justify-content: center;
 	align-items: center;
 	text-align: center;
-	background-color: #b5ccd1;
+	font-family: "Arial", sans-serif;
+	background-color: #e2e6e6;
     transition: 0.5s;
 }
 
@@ -14,14 +15,13 @@
     box-shadow: 0 0 20px 0px rgba(0,0,0,0.3);
 }
 
-
-
 .left{
-	background: url("some_image") no-repeat center; /*TODO: add some image*/
-	background-size: cover;
+	background: url(/media/images/untitled-1.jpg) no-repeat center;
+	background-size: contain;
+	border-image: round;
 	height: 100%;
     border-radius: 10px;
-
+	margin-left: 25px;
 }
 
 .right{
@@ -43,7 +43,7 @@ h2:after{
     height: 4px;
     width: 50px;
     border-radius: 2px;
-    background-color: #25a888;
+    background-color: #A04142;
 }
 
 .field{
@@ -51,7 +51,7 @@ h2:after{
 	border: 2px solid rgba(0, 0, 0, 0);
     border-radius: 3px;
 	outline: none;
-	background-color: rgba(230, 230, 230, 0.835);
+	background-color: #ffffff;
 	padding: 0.5rem 1rem;
 	font-size: 1.1rem;
 	margin-bottom: 22px;
@@ -59,7 +59,8 @@ h2:after{
 }
 
 .field:hover{
-	background-color: rgba(0, 0, 0, 0.1);
+	background-color: #dc9697;
+	color: #ffffff;
 }
 
 textarea{
@@ -69,7 +70,7 @@ textarea{
 .btn{
 	width: 40%;
 	padding: 0.5rem 1rem;
-	background-color: #25a888;
+	background-color: #A04142;
     border-radius: 3px;
 	color: #fff;
 	font-size: 1.1rem;
@@ -81,6 +82,8 @@ textarea{
 
 .btn:hover{
     box-shadow: 0 0 20px 0px rgba(0,0,0,0.15);
+	background-color: #771d1f;
+	color: #ffffff;
 }
 
 .field:focus{

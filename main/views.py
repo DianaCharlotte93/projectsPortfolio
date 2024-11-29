@@ -17,11 +17,11 @@ def portfolio_view(request):
         }
         message = '''
         From:\n\t\t{}\n
-        Message:\n\t\t{}\n
         Email:\n\t\t{}\n
         Phone:\n\t\t{}\n
-        '''.format(form_data['name'], form_data['message'], form_data['email'], form_data['phone'])
-        send_mail('You got a mail!', message, '', ['dianaveaudry@gmail.com'])  # TODO: enter your email address
+        Message:\n\t\t{}\n
+        '''.format(form_data['name'], form_data['email'], form_data['phone'], form_data['message'])
+        send_mail('Personal portfolio email!', message, '', ['dianaveaudry@gmail.com'])
 
     return render(request, 'contact.html', {})
 
